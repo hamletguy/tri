@@ -1,0 +1,15 @@
+ALGORITHM insert
+VAR
+    key,step,j : INTEGER;
+    t : ARRAY_OF INTEGER[50];
+BEGIN
+    FOR step FROM 1 TO t.length-1 STEP 1  DO
+    key:=t[step];
+    j:=t[step-1];
+    WHILE (j>=0 AND key<t[j]) DO
+        t[j+1]:=t[j];
+        j:=j-1;
+    END_WHILE
+    t[j+1]:=key;
+    END_FOR
+END
